@@ -1,0 +1,138 @@
+body {
+    font-family: 'Poppins'; /* defindo a fonte do corpo do site */
+}
+
+.cabecalho {
+    display: flex;  /* colocando o menu ao lado da imagem de logo */
+    justify-content: space-between;  /* alinhando o menu */
+    padding: 30px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.cabecalho .logo {
+    width: 65px;  /* definindo uma altura da logo */
+}
+
+.cabecalho .menu{
+    display: flex;  /* colocando o menu ao lado da imagem de logo, requer espaçamento */
+    align-items: center;  /* alinhando as opções do menu */
+    height: 100%;  /* centralizando no espaço que tem as opções do menu */
+}
+
+.cabecalho nav li a{
+    font-weight: bold;  /* colocando o texto do menu em negrito */
+    color: #ffffff;  /* colocando a cor do menu como sendo branco - cor hexadeximal*/
+    font-size: 25px;  /* colocando o texto do menu com fonte 25 pixel */
+    padding: 10px 20px;  /* colocando espaçamento entre elementos e do topo e fundo */
+    border-radius: 50px;  /* colocando efeito de borda quando colocar o mause em cima e visualizar uma forma arrendodada */
+    transition: 0.2s;  /* tempo de transição de efeito entre os itens do menu */
+}
+
+.cabecalho nav li a:hover {  /* Hover é quando passar o mause em cima, efeito */
+    background-color: #d5011d;  /* cor hexadeximal */
+}
+
+.container {
+    max-width: 1440px;  /* colocando tamanho máximo do site */
+    margin: 0 auto;  /* margem automática */
+    display: flex;  /* colocando itens do container lado a lado, requer espaçamento (height)*/
+    align-items: center;  /* alinhando as opções do menu */
+    height: calc(100vh - 132px);  /* centralizando no espaço que tem as opções do menu de acordo com a tela do usuário - o valor do menu*/
+    padding: 0 30px 30px;  /* zero espaçamento em cima, 30 entre elementos e 30 embaixo */
+}
+
+.container .imagem-titulo {
+    max-width: 500px;
+}
+
+.container .descricao {
+    color: #a8adb7;
+    width: 85%;
+    font-size: 18px;  /* tamanho da fonte */
+    margin: 30px 0;  /* margim do texto para para o item acima e 0 para a margim da esquera dele*/
+}
+
+.container .botao-trailer {
+    background-color: #ff0021;  /* cor de fundo do botão */
+    color: #ffffff;  /* cor do texto do botão */
+    padding: 15px;  /* espaçamento do botão */
+    font-size: 18px;  /* tamanho do texto do botão */
+    font-weight: bold;  /* texto do botão em negrito*/
+    cursor: pointer; /* muda o curso para mão quando coloca o mause no botão */
+    border: none;  /* sem borda*/
+    text-transform: uppercase;  /* transforma o texto do botão tudo para MAIUSCULO*/
+    transition: 0.5s all ease-in-out;  /* animação para o botão CRESCER ao passar o mause em cima*/
+}
+
+.container .botao-trailer:hover {  /* animação para o botão CRESCER ao passar o mause em cima*/
+    transform: scale(1.3)
+}
+
+.fundo-video {
+    background-color: red;
+    position: absolute;  /* coloca o video em segundo plano - tipo outra folha*/
+    z-index: -1;  /* coloca o video atrás dos itens do site - tipo profundidade*/
+    width: 100vw;  /* coloca o video ocupando 100 da largura do monitor do usuário*/
+    height: 100vh;  /* coloca o video ocupando 100 da altura do monitor do usuário*/
+    overflow: hidden;  /* retirando o transbordo do vídeo*/
+    display: flex;
+    justify-content: center;
+}
+
+.fundo-video .video {
+    height: 100vh;  /* aumentando propriamente o tamanho do video */
+}
+
+.fundo-video::after {  /* criando um item vazio com o css*/
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: absolute;  /* coloca o video em segundo plano - tipo outra folha*/
+    top: 0;  /* coloca o video posicionado no topo com 0 de margem*/
+    left: 0;  /* coloca o video posicionado na esquerda com 0 de margem*/
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,1) 100%);  /* cria as laterais e um degrader com opacidade usando o site https://cssgradient.io/*/
+}
+
+.modal {  /* colocando um popup com o trailer no centro do site para assistir*/
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(52, 52, 50, 0.749);
+    opacity: 0;  /* esconder o popup, essa opção deve vir acompanhada com a opção visibility*/
+    visibility: hidden;  /* definindo que o popup será apresentado como escondido (hidden)*/
+}
+
+.conteudo-modal {  /* estilizando o popup com o trailer no centro do site para assistir*/
+    display: flex;  /* colocando um popup do trailer no centro*/
+    justify-content: center;  /* colocando um popup centralizado no centro do site*/
+    align-items: center;  /* alinhando o popup*/
+    flex-direction: column;  /* ajustanto o X do popup*/
+    height: 100vh;  /* ajustando o tamanho da colunas dos elementos */
+    border-radius: 5px;  /* colocando uma borda no popup */
+    gap: 15px;  /* criar um espaçamento entre os elementos */
+}
+
+.fechar-modal {
+    background-color: #ffffff;
+    color: #f03a17;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;  /* criar um borda levemente arrendondada no X de fechar o trailer */
+}
+
+.modal iframe{
+    border-width: 0;  /* sem borda o vídeo */
+    width: 640px;
+    height: 360px;
+}
+
+.modal.aberto {
+    opacity: 1;
+    visibility: visible;
+}

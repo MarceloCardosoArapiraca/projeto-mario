@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>  <!--cabeça ou informações que não aparecem no site-->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="shortcut icon" href="./src/imagens/favicon.ico" type="image/x-icon">  <!--icone que fica lá na aba a abertura do site no navegador-->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap" rel="stylesheet" />  <!--escolha da fonte do site, pego no google fontes-->
+
+		<link rel="stylesheet" href="src/css/reset.css">
+
+		<link rel="stylesheet" href="src/css/estilos.css">
+
+		<link rel="stylesheet" href="src/css/responsivo.css">
+
+		<title>Super Mario Bros - O Filme</title>  <!--texto que fica na aba do navegador-->
+	</head>
+	<body>  <!--corpo do site -->
+		<div class="fundo-video">
+			<video class="video" autoplay loop muted>  
+				<source src="./src/video/video-mario.mp4" type="video/mp4" />
+			</video>
+		</div>
+
+		<header class="cabecalho">
+			<a>  <!--define um hiperlink-->
+				<img class="logo" src="./src/imagens/logo-chapeu-mario.png" alt="logo chapéu Mario" />  <!--o ALT significa texto alternativo caso a imagem não carregue-->
+			</a>
+			<nav>
+				<ul class="menu">
+					<li><a href="">Home</a></li>  <!-- a parte <a href="" é responsável para colocar um link quando o item for clicado-->
+					<li><a href="">Detalhes</a></li>  <!-- a parte <a href="" é responsável para colocar um link quando o item for clicado-->
+				</ul>
+			</nav>
+		</header>
+		<main class="container">
+			<div class="informacoes">
+				<img class="imagem-titulo" src="./src/imagens/titulo.png" alt="imagem do título do filme" />  <!--o ALT significa texto alternativo caso a imagem não carregue-->
+				<p class="descricao">Mario é um encanador junto com seu irmão Luigi. Um dia, eles vão parar no reino dos cogumelos, governado pela Princesa Peach, mas ameaçado pelo rei dos Koopas, que faz de tudo para conseguir reinar em todos os lugares.</p>
+				<button class="botao-trailer">Veja o trailer</button>
+			</div>
+			<img class="mario" src="./src/imagens/super-mario-chars.png" />  <!--imagem com o texto SUPER MARIO BROS-->
+			
+			<div class="modal">  <!--colocando um popup com o trailer no centro do site para assistir-->
+				<div class="conteudo-modal">
+					<span class="fechar-modal">X</span>
+					<iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/Cb4WV4aXBpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+		</main>
+
+		<script src="./src/js/index.js"></script>  <!--chamando o arquivo javascrip - colocar no final-->
+	</body>
+</html>

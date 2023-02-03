@@ -1,0 +1,64 @@
+@media (max-width: 1200px) {  /* configurando o site para telas grandes*/
+    body {
+        background-color: #f44336;
+    }
+
+    .fundo-video {
+        display: none;  /* essa função substitui o estilo criado em estilo.css de "display: flex" para o fundo-video - a ordem dos links no index.html deve ser RESET, ESTILO, RESPONSIVO */
+    }
+
+    .container {
+        flex-wrap: wrap;  /* função que coloca um conteudo abaixo do outro se não ouver espaço no monitor, no celular etc */
+        justify-content: center;
+        height: auto;
+        gap: 30px;
+    }
+
+    .container .mario {
+        max-width: 50%;
+    }
+
+    .container .informacoes {
+        display: flex;
+        align-items: center;  /* itens alinhados ao centro */
+        flex-direction: column; /* itens alinhados como coluna*/
+    }
+
+    .container .descricao {
+        color: #ffffff;
+        text-align: center;  /* sempre alinhar o texto de descrição ao centro da tela*/
+    }
+
+    .container .botao-trailer {
+        background-color: #263238;
+    }
+}
+
+@media (max-width: 500px) {  /* configurando o site para telas médias*/
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .container .imagem-titulo {
+        max-width: 75%;
+    }
+
+    .modal .fechar-modal {
+        width: 30px;
+        line-height: 30px;
+    }
+
+    .modal #video {
+        width: 300px;  
+        height: 169px;  /* altura*/
+    }
+}
+
+@media (max-width: 376px) {  /* configurando o site para telas pequenas*/
+    .modal #video {
+        width: 250px;
+        height: 140px;
+    }
+}
